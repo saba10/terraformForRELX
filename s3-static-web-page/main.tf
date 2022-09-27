@@ -9,6 +9,15 @@ terraform {
       version = "~>3.0"
     }
   }
+##using below config for storing state file requires a pre-exiting s3 bucket with versioning enabled and a dynamoDB table with 'LockID' as the primary key
+#    backend "s3" { 
+#     bucket  = "<bucket-name>" 
+#     key     = "<path>/terraform.tfstate" 
+#     region  = "us-east-1" 
+#     encrypt = true
+#     dynamodb_table = "<table-name>"
+#   } 
+
 }
 
 provider "aws" {
